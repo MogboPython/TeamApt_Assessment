@@ -19,6 +19,7 @@ public class TeamApt{
         //declaring variables to store get the number and its code
         String number = "";
         String firstFourDigits = "";
+		String firstFiveDigits = "";
 
         try
         {
@@ -31,7 +32,14 @@ public class TeamApt{
             {
                 number = sc.nextLine();
                 firstFourDigits = number.substring(0,4);
-                checkNumber(number, firstFourDigits);
+				
+				if (firstFourDigits.equals("0702")){
+					firstFiveDigits = number.substring(0,5);
+					checkNumber(number, firstFiveDigits);
+				}
+				else{
+					checkNumber(number, firstFourDigits);
+				}
             }
 
             sc.close();
@@ -70,6 +78,8 @@ public class TeamApt{
     }
 
     public static void main(String args[]){
+		
+		int total;
 
         TeamApt.readFile("PhoneNumbers.txt");
 
@@ -78,5 +88,9 @@ public class TeamApt{
         System.out.println("Total Globacom numbers: " + glo);
         System.out.println("Total 9Mobile numbers: " + nineMobile);
         System.out.println("Total MTEL numbers: " + mtel);
+		
+		total = mtn + glo + airtel + nineMobile +mtel;
+		
+		System.out.println("Total numbers available: " + total); 
     }
 }
