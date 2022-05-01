@@ -1,18 +1,17 @@
 import java.io.*;
 import java.util.Scanner;
 import java.util.List;
-import java.util.ArrayList;
 import java.util.Arrays;
 
 public class TeamApt{
 
 
-    //Here I am declaring the lists to store the numbers for each network
-    private static List<String> mtn = new ArrayList<String>();
-    private static List<String> airtel = new ArrayList<String>();
-    private static List<String> glo = new ArrayList<String>();
-    private static List<String> nineMobile = new ArrayList<String>();
-    private static List<String> mtel = new ArrayList<String>();
+    //Here I am declaring the variables to store the count of numbers for each network
+    private static int mtn = 0;
+    private static int airtel = 0;
+    private static int glo = 0;
+    private static int nineMobile = 0;
+    private static int mtel = 0;
 
     //This function accepts the file to be read and reads its content
     static void readFile(String file){
@@ -42,8 +41,7 @@ public class TeamApt{
         }
     }
 
-    //This function uses the code gotten from the readFile function to assign add
-    //the numbers to the list they belong to 
+    //This function uses the code gotten from the readFile function to assign and count the numbers 
     static void checkNumber(String number, String code){
 
         List<String> mtnCode = Arrays.asList("0703","0706","0803","0806","0810","0813","0814","0816","0903","0906","0913","0916","07025","07026","0704");
@@ -54,19 +52,19 @@ public class TeamApt{
 
 
         if(mtnCode.contains(code)){
-            mtn.add(number);
+            mtn += 1;
         }
         else if (airtelCode.contains(code)){
-            airtel.add(number);
+            airtel += 1;
         }
         else if(gloCode.contains(code)){
-            glo.add(number);
+            glo += 1;
         }
         else if(nineMobileCode.contains(code)){
-            nineMobile.add(number);
+            nineMobile += 1;
         }
         else if(mtelCode.contains(code)){
-            mtel.add(number);
+            mtel += 1;
         }
 
     }
@@ -75,10 +73,10 @@ public class TeamApt{
 
         TeamApt.readFile("PhoneNumbers.txt");
 
-        System.out.println("MTN numbers: " + mtn.toString()+"\n");
-        System.out.println("Airtel numbers: " + airtel.toString()+"\n");
-        System.out.println("Globacom numbers: " + glo.toString()+"\n");
-        System.out.println("9Mobile numbers: " + nineMobile.toString()+"\n");
-        System.out.println("MTEL numbers: " + mtel.toString());
+        System.out.println("Total MTN numbers: " + mtn);
+        System.out.println("Total Airtel numbers: " + airtel);
+        System.out.println("Total Globacom numbers: " + glo);
+        System.out.println("Total 9Mobile numbers: " + nineMobile);
+        System.out.println("Total MTEL numbers: " + mtel);
     }
 }
