@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class TeamApt{
 
 
-    //Here I am declaring initialising the variables to store the count of numbers for each network
+    //Here I am declaring and initialising the variables to store the count of numbers for each network
     private static int mtn = 0;
     private static int airtel = 0;
     private static int glo = 0;
@@ -19,7 +19,7 @@ public class TeamApt{
         //declaring variables to store get the number and its code
         String number = "";
         String firstFourDigits = "";
-		String firstFiveDigits = "";
+	String firstFiveDigits = "";
 
         try
         {
@@ -34,13 +34,13 @@ public class TeamApt{
                 firstFourDigits = number.substring(0,4);
 				
                 //here I am checling to see if it's a 0702 number so I can expand it to 07025 or 07026
-				if (firstFourDigits.equals("0702")){
-					firstFiveDigits = number.substring(0,5);
-					checkNumber(number, firstFiveDigits);
-				}
-				else{
-					checkNumber(number, firstFourDigits);
-				}
+		if (firstFourDigits.equals("0702")){
+			firstFiveDigits = number.substring(0,5);
+			checkNumber(number, firstFiveDigits);
+		}
+		else{
+			checkNumber(number, firstFourDigits);
+		}
             }
 
             sc.close();
@@ -80,7 +80,7 @@ public class TeamApt{
 
     public static void main(String args[]){
 		
-		int total;
+	int total;
 
         TeamApt.readFile("PhoneNumbers.txt");
 
@@ -90,8 +90,8 @@ public class TeamApt{
         System.out.println("Total 9Mobile numbers: " + nineMobile);
         System.out.println("Total MTEL numbers: " + mtel);
 		
-		total = mtn + glo + airtel + nineMobile +mtel;
+	total = mtn + glo + airtel + nineMobile +mtel;
 		
-		System.out.println("Total numbers available: " + total); 
+	System.out.println("Total numbers available: " + total); 
     }
 }
