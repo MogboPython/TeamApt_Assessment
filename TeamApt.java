@@ -6,7 +6,7 @@ import java.util.Arrays;
 public class TeamApt{
 
 
-    //Here I am declaring the variables to store the count of numbers for each network
+    //Here I am declaring initialising the variables to store the count of numbers for each network
     private static int mtn = 0;
     private static int airtel = 0;
     private static int glo = 0;
@@ -33,6 +33,7 @@ public class TeamApt{
                 number = sc.nextLine();
                 firstFourDigits = number.substring(0,4);
 				
+                //here I am checling to see if it's a 0702 number so I can expand it to 07025 or 07026
 				if (firstFourDigits.equals("0702")){
 					firstFiveDigits = number.substring(0,5);
 					checkNumber(number, firstFiveDigits);
